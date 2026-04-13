@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Countdown – Shavya</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">Shavya 💖</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="letter.html">Letter</a></li>
+    <li><a href="countdown.html">Countdown</a></li>
+    <li><a href="wish.html">Wish</a></li>
+    <li><a href="timeline.html">Timeline</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Countdown Section -->
+  <section class="hero">
+    <h1>Anniversary Countdown 💞</h1>
+    <p>Counting every moment until our special day...</p>
+    <h2 id="countdown-timer">Loading...</h2>
+    <br />
+    <a href="index.html" class="start-button">Back to Home</a>
+  </section>
+
+  <footer>
+    <p>Made with 💖 by Shavya</p>
+    <p>&copy; 2025 Shailesh. All rights reserved. ❤️</p>
+  </footer>
+
+  <script>
+    const countdown = () => {
+      const targetDate = new Date("2026-04-23T00:00:00");
+      const timer = document.getElementById("countdown-timer");
+      setInterval(() => {
+        const now = new Date();
+        const diff = targetDate - now;
+        if (diff <= 0) {
+          timer.innerText = "It's Our Special Day, our 1st meeting anniversary! 💖";
+          return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((diff / (1000 * 60)) % 60);
+        const secs = Math.floor((diff / 1000) % 60);
+        timer.innerText = `${days}d ${hrs}h ${mins}m ${secs}s`;
+      }, 1000);
+    };
+    countdown();
+  </script>
+
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wish Box – Shavya</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe6f0);
+      color: #d63384;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #ffffffee;
+      box-shadow: 0 8px 20px rgba(255, 105, 135, 0.2);
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      color: #ff4d88;
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ffcce6;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #ff4d88;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e63971;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">Shavya 💖</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="letter.html">Letter</a></li>
+    <li><a href="countdown.html">Countdown</a></li>
+    <li><a href="wish.html">Wish</a></li>
+    <li><a href="timeline.html">Timeline</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Wish Form -->
+  <section class="hero">
+    <h1>Send Us Your Wishes 💌</h1>
+    <p>Leave a sweet message below – it means the world to us 💕</p>
+
+    <form action="https://formspree.io/f/xblkkkdq" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <textarea name="message" placeholder="Your beautiful wish..." rows="5" required></textarea>
+      <button type="submit" class="start-button">Send Wish 💝</button>
+    </form>
+
+    <div id="thankYouMsg" style="display: none; margin-top: 30px;">
+      <h3 style="color: #ff6b9f;">Thank you for your heartfelt message! 💖</h3>
+    </div>
+
+    <br />
+    
+  </section>
+
+  <footer>
+    <p>Made with 💖 by Shavya</p>
+    <p>&copy; 2025 Shailesh. All rights reserved. ❤️</p>
+  </footer>
+
+  <script>
+    function showThankYou(event) {
+      event.preventDefault();
+      document.querySelector('.wish-form').style.display = 'none';
+      document.getElementById('thankYouMsg').style.display = 'block';
+    }
+  </script>
+
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secret Letter – Shavya</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+   <nav class="navbar">
+  <div class="logo">Shavya 💖</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="letter.html">Letter</a></li>
+    <li><a href="countdown.html">Countdown</a></li>
+    <li><a href="wish.html">Wish</a></li>
+    <li><a href="timeline.html">Timeline</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Secret Letter -->
+  <section class="hero">
+    <h1>Secret Letter 💌</h1>
+    <p>This letter is protected. Enter The Date of our 1st date (DD/MM/YYYY) to unlock...</p>
+    <input type="password" id="passInput" placeholder="Enter secret password" />
+    <button onclick="checkPassword()" class="start-button">Unlock</button>
+
+    <div id="letterContent" style="display:none; margin-top: 40px; max-width: 700px; margin-left:auto; margin-right:auto;">
+      <h2 style="color:#ff6b9f;">My Love, 💖</h2>
+      <p>I don’t even know where to begin, because whenever I talk about you — words fall short.</p>
+      <h3> you the most beautiful part of my life.</h3> 
+       <p>From the moment you walked in, everything felt lighter, warmer, and more meaningful.And even though I try to express it every day… I still feel like you deserve so much more than I can say.</p>
+       <h3>But today, I want to say something from the deepest corner of my heart.</h3>
+
+        <p>I’m sorry. I know I mess up sometimes.I know I say or do things that might hurt you — unintentionally, carelessly — and I hate that I ever make you feel anything less than loved.You don’t deserve that.You deserve patience, care, understanding… and every bit of love I have inside me.Sometimes I act immature, or say things without thinking — but please know that I never want to be the reason behind your tears.</p>
+
+If I could, I would take away every little hurt I’ve ever caused you.
+All I want is to make you smile — every single day.
+You are not just my girlfriend — you are my peace, my safe place, my everything.
+
+I love you more than words, more than time, more than life itself.
+And I’m learning… to be better, for you — for us.
+
+Thank you for being patient with me.
+Thank you for loving me despite my flaws.
+Thank you for being my person. Always. 
+        <br /><br />
+          
+        <span style="font-family:'Great Vibes', cursive; font-size: 1.6rem;">Yours always,Someone who loves you endlessly 💞</span>
+      </p>
+      <br />
+      <a href="index.html" class="start-button">Back to Home</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with 💖 by Shavya</p>
+    <p>&copy; 2025 Shailesh. All rights reserved. ❤️</p>
+  </footer>
+
+  <script>
+    function checkPassword() {
+      const password = "23/04/2025"; // Change this to your secret password
+      const input = document.getElementById("passInput").value;
+      const content = document.getElementById("letterContent");
+
+      if (input === password) {
+        content.style.display = "block";
+        document.getElementById("passInput").style.display = "none";
+        document.querySelector("button").style.display = "none";
+      } else {
+        alert("Oops! Wrong password. Try again 💔");
+      }
+    }
+  </script>
+
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>
